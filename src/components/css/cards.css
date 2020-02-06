@@ -1,27 +1,38 @@
 section {
     margin: 20px;
-    
 }
 
 article {
-    width: 100%;
-    max-width: 380px;
-    margin: 30px auto 0;
-    padding: 30px;
+    max-width: 250px;
+    margin: 10px;
+    padding: 20px;
     background: #ffffff;
     border: 1px solid #ddd;
+    float: left;
 }
 
-input[type=number]
-{
-  -moz-appearance: textfield;
-  width: 45px;
-  height: 42px;
-  line-height: 1.65;
-  float: left;
-  display: block;
-  padding: 0;
-  margin: 0;
-  padding-left: 20px;
-  border: 1px solid #eee;
+article img {
+    width: 100%;
+}
+
+article .atributs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+article .description {
+    display: none;
+}
+
+article header {
+    margin: 10px;
+}
+
+article .effects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
 }

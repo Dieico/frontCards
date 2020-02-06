@@ -1,6 +1,4 @@
-body {
-    padding:  20px;    
+.home {
     display: flex;
     align-items: top;
-    justify-content: space-between;
 }

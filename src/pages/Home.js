@@ -7,10 +7,10 @@ import './body.css';
 
 function Home() {
     return (
-        <body>
+        <section className="home">
             <Form/>
             <Cards/>
-        </body>
+        </section>
     );
 }
 
