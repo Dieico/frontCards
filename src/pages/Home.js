@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Cards from '../components/Cards';
-import Form from '../components/Form';
+
 
 import './body.css';
 
 
-function Home() {
-    return (
-        <section className="home">
-            <Form/>
-            <Cards/>
-        </section>
-    );
+class Home extends Component {
+    render() {
+        return (
+            <section className="home">
+                <Cards />
+            </section>
+        );
+    }
 }
 
 export default Home;

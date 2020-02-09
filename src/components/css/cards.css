@@ -1,18 +1,35 @@
-section {
+.search{
     margin: 20px;
+    background-color: #ddd;
+    padding: 10px;
 }
 
 article {
-    max-width: 250px;
+    width: 300px;
+    height: 450px;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     background: #ffffff;
     border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow:  2px 2px 0px #d9d9d9;
+             
     float: left;
 }
 
-article img {
-    width: 100%;
+article .img {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;   
+  border: 1px solid #ddd;
+  height: 150px;  
+}
+
+article img{
+    flex-shrink: 0;
+    min-width: 100%;
+    
 }
 
 article .atributs {
@@ -24,15 +41,37 @@ article .atributs {
 
 article .description {
     display: none;
+
 }
 
 article header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin: 10px;
 }
+
+article header button{
+    border: none;
+    background: none;
+}
+
+
+
 
 article .effects {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 10px;
+    
 }
+
+article .spell {
+    height: 120px;
+    margin-top: 10px;
+    overflow-y: auto ;
+    overflow-wrap: normal;
+    display: inline-block;    
+}
+

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import api from "../services/api"
-
 import './css/form.css';
 
 class Form extends Component {
@@ -13,14 +12,15 @@ class Form extends Component {
         affiliation: '',
         spell: '',
         tag: '',
+        image: null,
     }
 
-    handleSubmit =  async e => {
-        e.preventDefault();
-        console.log(this.state);
+    handleSubmit = async e => {
+        e.preventDefault();       
         const data = new FormData();
 
-        data.append('image', this.state.name);
+        data.append('name', this.state.name);
+        data.append('image', this.state.image);
         data.append('at1', this.state.at1);
         data.append('at2', this.state.at2);
         data.append('at3', this.state.at3);
@@ -29,24 +29,28 @@ class Form extends Component {
         data.append('spell', this.state.spell);
         data.append('tag', this.state.tag);
 
-        await api.post('create', data)
-
-        
-
-        this.props.history.push('/');
+        await api.post('create', data); 
+        this.props.update();   
     }
 
     handleImageChange = e => {
-        this.setState ( { image: e.target.files[0] } );
+        this.setState({ image: e.target.files[0] });
+
     }
 
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
+        
+
+
     }
 
     render() {
         return (
-            <form id="new-card" onSubmit={this.handleSubmit}>
+            <form id="new-card"
+                className="Neumorphism"
+                onSubmit={this.handleSubmit}
+            >
                 <input type="file" onChange={this.handleImageChange} />
 
                 <input
@@ -91,21 +95,13 @@ class Form extends Component {
                     placeholder="Afiliação"
                     onChange={this.handleChange}
                     value={this.state.affiliation} >
+                    <option value="Selecione">Selecione</option>
                     <option value="Indígena">Indígena</option>
                     <option value="Africano">Africano</option>
                     <option value="Europeia">Europeia</option>
                     <option value="Neutro">Neutro</option>
 
                 </select>
-
-                <input
-                    type="text"
-                    name="spell"
-                    placeholder="Habilidades"
-                    onChange={this.handleChange}
-                    value={this.state.spell}
-
-                />
 
                 <input
                     type="text"
@@ -117,15 +113,23 @@ class Form extends Component {
 
                 <textarea
                     type="text"
+                    name="spell"
+                    placeholder="Habilidades"
+                    onChange={this.handleChange}
+                    value={this.state.spell}
+
+                />
+
+                <textarea
+                    type="text"
                     name="description"
                     placeholder="Descrição"
                     onChange={this.handleChange}
                     value={this.state.description}
-                    
+
                 />
 
                 <button type="submit">Enivar</button>
-
             </form>
         )
     }

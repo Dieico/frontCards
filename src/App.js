@@ -1,13 +1,14 @@
 import React from 'react';
 
 import Header from './components/header';
-import Home from './pages/Home';
+import Cards from './components/Cards';
+
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Home/>
+      <Cards />
     </div>
   );
 }
