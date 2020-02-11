@@ -52,7 +52,7 @@ class Cards extends Component {
                             <article key={card._id}>
 
                                 <header>
-                                <h5>{card.name}</h5>
+                                    <h5>{card.name}</h5>
                                     <button type="button" onClick={() => { this.deleteId(card._id) }}>
                                         <AiFillCloseCircle size={20} />
                                     </button>
@@ -61,17 +61,19 @@ class Cards extends Component {
                                 <div className="img">
                                     <img src={`http://localhost:3030/files/${card.image}`} alt="Card" />
                                 </div>
-
+                                <hr />
                                 <footer>
                                     <div className="atributs">
                                         <div className="at1">{card.at1}</div>
                                         <div className="at2">{card.at2}</div>
                                         <div className="at3">{card.at3}</div>
                                     </div>
+                                    <hr />
                                     <div className="effects">
-                                        <div className="affiliation">{card.affiliation}</div>
+                                        <div className="affiliation"><h7><b>Filiação:</b> {card.affiliation}</h7></div>
                                         <Modal description={card.description} />
                                     </div>
+                                    <hr />
 
                                     <div style={{ maxWidth: "260px", }} className="spell">
                                         <p>{card.spell}</p>
