@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../services/api';
 import Modal from '../components/modal';
+import FormModal from '../components/formModal';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import Form from '../components/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/cards.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { Col } from 'react-bootstrap';
+import { Col, Button } from 'react-bootstrap';
 
 
 
@@ -59,7 +60,7 @@ class Cards extends Component {
                                 </header>
 
                                 <div className="img">
-                                    <img src={`http://localhost:3030/files/${card.image}`} alt="Card" />
+                                    <img src={`https://formcards.herokuapp.com/files/${card.image}`} alt="Card" />
                                 </div>
                                 <hr />
                                 <footer>
@@ -72,6 +73,8 @@ class Cards extends Component {
                                     <div className="effects">
                                         <div className="affiliation"><h7><b>Filiação:</b> {card.affiliation}</h7></div>
                                         <Modal description={card.description} />
+                                        <FormModal />
+                                        
                                     </div>
                                     <hr />
 
