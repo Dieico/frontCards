@@ -36,14 +36,10 @@ class Form extends Component {
 
     handleImageChange = e => {
         this.setState({ image: e.target.files[0] });
-
     }
 
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
-        
-
-
     }
 
     render() {
