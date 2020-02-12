@@ -60,7 +60,7 @@ class Cards extends Component {
                                 </header>
 
                                 <div className="img">
-                                    <img src={`https://formcards.herokuapp.com/files/${card.image}`} alt="Card" />
+                                    <img src={`http://formcards.herokuapp.com/files/${card.image}`} alt="Card" />
                                 </div>
                                 <hr />
                                 <footer>
@@ -74,7 +74,7 @@ class Cards extends Component {
                                         <div className="affiliation"><h7><b>Filiação:</b> {card.affiliation}</h7></div>
                                         <Modal description={card.description} />
                                         <FormModal />
-                                        
+
                                     </div>
                                     <hr />
 
