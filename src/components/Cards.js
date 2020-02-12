@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/cards.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { Col, Button } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 
 
@@ -73,7 +73,7 @@ class Cards extends Component {
                                     <div className="effects">
                                         <div className="affiliation"><h7><b>Filiação:</b> {card.affiliation}</h7></div>
                                         <Modal description={card.description} />
-                                        <FormModal />
+                                        <FormModal card={card} />
 
                                     </div>
                                     <hr />

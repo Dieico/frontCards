@@ -1,12 +1,15 @@
 import Modal from 'react-bootstrap/Modal'
 import React, { useState } from 'react';
+import Form from '../components/Form';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
-function Example() {
+import './css/modal.css';
+
+function Example(props) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -14,38 +17,27 @@ function Example() {
 
     return (
         <>
-            <Button  as="animate" variant="secondary" size="sm" onClick={handleShow}>
+            <Button variant="outline-dark" size="sm" onClick={handleShow}>
                 Editar
             </Button>
 
-            <Modal size="xl" aria-labelledby="contained-modal-title-vcenter" centered show={show} onHide={handleClose}>
+            <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show={show} onHide={handleClose}>
 
                 <Modal.Header closeButton>
-                    <Modal.Title>Editor de Cartas</Modal.Title>
+                    
+                    <Modal.Title>{props.card.name}</Modal.Title>
+
                 </Modal.Header>
 
                 <Modal.Body>
-                    <Container>
+                    <Container>                        
                         <Row className="show-grid">
-                            <Col xs={12} md={8}>
-                                <code>.col-xs-12 .col-md-8</code>
-                            </Col>
-                            <Col xs={6} md={4}>
-                                <code>.col-xs-6 .col-md-4</code>
-                            </Col>
+                            <Col><img src={`http://formcards.herokuapp.com/files/${props.card.image}`} alt="Card" /></Col>
+                            <Col><Form /></Col>
                         </Row>
-
-                        <Row className="show-grid">
-                            <Col xs={6} md={4}>
-                                <code>.col-xs-6 .col-md-4</code>
-                            </Col>
-                            <Col xs={6} md={4}>
-                                <code>.col-xs-6 .col-md-4</code>
-                            </Col>
-                            <Col xs={6} md={4}>
-                                <code>.col-xs-6 .col-md-4</code>
-                            </Col>
-                        </Row>
+                        
+                        
+                        
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
