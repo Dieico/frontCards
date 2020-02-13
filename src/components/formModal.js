@@ -23,51 +23,94 @@ function Example(props) {
 
                 <Modal.Header closeButton>
 
-                    <Modal.Title>{props.card.name}</Modal.Title>
+                    <Modal.Title>Editor de Carta</Modal.Title>
 
                 </Modal.Header>
 
                 <Modal.Body>
                     <Container>
-                        <Row className="show-grid">
-                            <Col><img src={`http://formcards.herokuapp.com/files/${props.card.image}`} alt="Card" /></Col>
-                            <Col>
-                                <Form.Group as={Row} controlId="formPlaintextEmail">
-                                    <Form.Label column sm="2">
-                                        Nome:
-                                    </Form.Label>
-                                    <Col sm="10">
-                                        <Form.Control plaintext defaultValue={props.card.name} />
-                                    </Col>
+                        <Form onSubmit={this.handleSubmit}>
+                            <Row className="Modal">
 
+                                <Col controlId="Coluna1" sm="6">
+
+                                    <Form.Group>
+                                        <Form.Control controlId="name" plaintext defaultValue={props.card.name} />
+                                    </Form.Group>
+
+                                    <Container>
+                                        <img src={`http://formcards.herokuapp.com/files/${props.card.image}`} alt="Card" />
+                                    </Container>
+                                    <br />
                                     <Form.Row>
-                                        <Form.Group as={Col} controlId="formGridCity">
+                                        <Form.Group as={Col} controlId="at1">
                                             <Form.Label>At1</Form.Label>
-                                            <Form.Control as="number" defaultValue={props.card.at1} />
+                                            <Form.Control plaintext defaultValue={props.card.at1} />
                                         </Form.Group>
 
-                                        <Form.Group as={Col} controlId="formGridState">
+                                        <Form.Group as={Col} controlId="at2">
                                             <Form.Label>At2</Form.Label>
-                                            <Form.Control defaultValue={props.card.at2} />
+                                            <Form.Control plaintext defaultValue={props.card.at2} />
                                         </Form.Group>
 
-                                        <Form.Group as={Col} controlId="formGridZip">
-                                            <Form.Label>At3</Form.Label>
-                                            <Form.Control defaultValue={props.card.at3} />
+                                        <Form.Group as={Col} controlId="at3">
+                                            <Form.Label >At3</Form.Label>
+                                            <Form.Control plaintext defaultValue={props.card.at3} />
                                         </Form.Group>
                                     </Form.Row>
 
-                                    <Col sm="10">
-                                        <Form.Row number defaultValue={props.card.at1} />
-                                        <Form.Row number defaultValue={props.card.at2} />
-                                        <Form.Row number defaultValue={props.card.at3} />
-                                    </Col>
-                                </Form.Group>
-                            </Col>
-                        </Row>
+                                    <Row>
+                                        <Form.Label column sm="2">
+                                            Filiação:
+                                        </Form.Label>
+                                        <Col>
+                                            <Form.Control
+                                                as="select"
+                                                plaintext
+                                                defaultValue={props.card.affiliation}
+                                                sm="5">
+                                                <option>Africano</option>
+                                                <option>Indígena</option>
+                                                <option>Europeu</option>
+                                                <option>Neutro</option>
+                                            </Form.Control>
+                                        </Col>
+                                    </Row>
+
+                                    <Form.Group controlId="spell">
+                                        <Form.Label>
+                                            Magias:
+                                        </Form.Label>
+                                        <Form.Control
+                                            as="textarea"
+                                            rows="5"
+                                            cols="12"
+                                            plaintext
+                                            defaultValue={props.card.spell} />
+                                    </Form.Group>
+                                </Col>
 
 
+                                <Col controlId="Coluna2" sm="6">
 
+                                    <Form.Group>
+                                        <Form.Label column sm="5">
+                                            Descrição:
+                                            </Form.Label>
+                                        <Col >
+                                            <Form.Control
+                                                as="textarea"
+                                                rows="20"
+                                                plaintext
+                                                defaultValue={props.card.description} />
+                                        </Col>
+                                    </Form.Group>
+
+                                </Col>
+
+                            </Row>
+
+                        </Form>
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
