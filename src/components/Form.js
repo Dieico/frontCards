@@ -84,8 +84,6 @@ class Form extends Component {
 
                 </div>
 
-
-
                 <select
                     type="text"
                     name="affiliation"
