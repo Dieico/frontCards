@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import api from '../services/api';
-import Modal from '../components/modal';
 import FormModal from '../components/formModal';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import Form from '../components/Form';
@@ -24,7 +23,6 @@ class Cards extends Component {
     async componentDidMount() {
         const response = await api.get('index');
         this.setState({ cards: response.data })
-        console.log("update");
     }
 
     async deleteId(id) {
@@ -32,6 +30,12 @@ class Cards extends Component {
         this.componentDidMount();
         console.log("click");
     }
+
+    async update() {
+        this.componentDidMount();
+    }
+
+
 
     render() {
 
@@ -44,7 +48,7 @@ class Cards extends Component {
                 <Row className="contend">
 
                     <Col sm={3} className="form">
-                        <Form update={this.componentDidMount.bind(this)} />
+                        <Form update={this.update.bind(this)} />
                     </Col>
 
                     <Col sm={9}>
@@ -60,7 +64,7 @@ class Cards extends Component {
                                 </header>
 
                                 <div className="img">
-                                    <img src={`http://formcards.herokuapp.com/files/${card.image}`} alt="Card" />
+                                    <img src={`https://lh3.google.com/u/0/d/${card.image}?${new Date().getTime()}`} alt="Card" />
                                 </div>
                                 <hr />
                                 <footer>
@@ -71,14 +75,15 @@ class Cards extends Component {
                                     </div>
                                     <hr />
                                     <div className="effects">
-                                        <div className="affiliation"><h7><b>Filiação:</b> {card.affiliation}</h7></div>
-                                        <Modal description={card.description} />
-                                        <FormModal card={card} />
+                                        <div 
+                                        className="affiliation">
+                                            <h6><b>Filiação:</b> {card.affiliation}</h6></div>
+                                        <FormModal card={card} update={this.update.bind(this)} />
 
                                     </div>
                                     <hr />
 
-                                    <div style={{ maxWidth: "260px", }} className="spell">
+                                    <div className="spell">
                                         <p>{card.spell}</p>
                                     </div>
 

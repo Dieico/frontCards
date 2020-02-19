@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from "../services/api"
+
 import './css/form.css';
 
 class Form extends Component {
@@ -35,6 +36,7 @@ class Form extends Component {
     }
 
     handleImageChange = e => {
+        console.log( e.target.files[0] )
         this.setState({ image: e.target.files[0] });
     }
 
