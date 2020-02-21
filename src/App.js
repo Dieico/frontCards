@@ -1,14 +1,21 @@
 import React from 'react';
+import { BrowserRouter } from "react-router-dom";
+
 
 import Header from './components/header';
 import Cards from './components/Cards';
+
+import Routes from './routes';
+
 
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Cards />
+      <BrowserRouter>
+        <Header />
+        <Routes />
+      </BrowserRouter>
     </div>
   );
 }

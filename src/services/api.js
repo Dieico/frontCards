@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = "http://localhost:3030/"
+const url = "https://formcards.herokuapp.com/"
 
 const api = axios.create({
     baseURL: url,
