@@ -3,6 +3,7 @@ import api from '../services/api';
 import FormModal from '../components/formModal';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import Form from '../components/Form';
+import Search from '../components/Search';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './css/cards.css';
@@ -43,7 +44,7 @@ class Cards extends Component {
             <Container fluid className="all">
 
                 <Row className="search">
-                    <h4>Pesquise aqui</h4>
+                    <Search />
                 </Row>
                 <Row className="contend">
 

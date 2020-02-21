@@ -81,13 +81,13 @@ function Example(props) {
                                     </Form.Group>
 
                                     <Form.Control type="hidden" id="id" defaultValue={props.card._id} />
-                                    <Form.Control id="image" defaultValue={props.card.image} />
+                                    <Form.Control id="image" type="hidden" defaultValue={props.card.image} />
 
                                     <Container>
                                         <Image id="imageshow"
                                             src={`https://lh3.google.com/u/0/d/${props.card.image}?${new Date().getTime()}`}
                                             alt="Card"
-                                            thumbnail />
+                                            fluid  />
                                     </Container>
 
                                     

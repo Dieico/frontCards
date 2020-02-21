@@ -3,7 +3,6 @@ import { BrowserRouter } from "react-router-dom";
 
 
 import Header from './components/header';
-import Cards from './components/Cards';
 
 import Routes from './routes';
 

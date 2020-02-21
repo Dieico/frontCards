@@ -18,7 +18,7 @@ class Home extends Component {
     }
 
     handleSubmit = () => {
-        if (this.state.password == '1234') {
+        if (this.state.password === '1234') {
             this.setState({ redirect: true })
         }
     }

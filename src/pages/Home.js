@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Cards from '../components/Cards';
-import Header from '../components/header';
+
 
 
 import './body.css';
