@@ -22,7 +22,6 @@ function Example(props) {
         event.preventDefault();
         const form = event.currentTarget;
 
-
         data.append('name', form.name.value);
         data.append('image', form.image.value);
         data.append('imagem', form.imagem.files[0]);

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Card, Button, Container, Row } from 'react-bootstrap';
 import { Redirect } from "react-router-dom";
 
+
 class Home extends Component {
 
     constructor(props) {
@@ -17,11 +18,11 @@ class Home extends Component {
         console.log(this.state.password);
     }
 
-    handleSubmit = () => {
-        if (this.state.password === '1234') {
+    handleSubmit = async (e) => {
+        // await api.post('login', this.state.password)
+        if (this.state.password === '1234')
             this.setState({ redirect: true })
-        }
-    }
+    };
 
     render() {
 
@@ -46,7 +47,7 @@ class Home extends Component {
                                         onChange={this.handleChange}
                                         value={this.state.password}
                                         placeholder="Digite a senha aqui" />
-                                        
+
 
                                     <Card.Footer>
                                         <Button

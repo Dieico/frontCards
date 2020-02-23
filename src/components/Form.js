@@ -30,7 +30,7 @@ class Form extends Component {
         data.append('spell', this.state.spell);
         data.append('tag', this.state.tag);
 
-        await api.post('create', data); 
+        await api.post('create', data);
         console.log("envio");
         this.props.update();   
     }

@@ -36,6 +36,17 @@ class Cards extends Component {
         this.componentDidMount();
     }
 
+    async search(affiliation) {
+        const response = await api.post(`search/${affiliation}`);
+        this.setState({ cards: response.data })
+    }
+
+    async searchName(name) {
+        const response = await api.post(`search/name/${name}`);
+        this.setState({ cards: response.data })
+    }
+
+
 
 
     render() {
@@ -44,7 +55,11 @@ class Cards extends Component {
             <Container fluid className="all">
 
                 <Row className="search">
-                    <Search />
+                    <Search 
+                    search={this.search.bind(this)} 
+                    searchName={this.searchName.bind(this)} 
+                    update={this.update.bind(this)}
+                    />
                 </Row>
                 <Row className="contend">
 
