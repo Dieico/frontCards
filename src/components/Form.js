@@ -32,7 +32,7 @@ class Form extends Component {
 
         await api.post('create', data);
         console.log("envio");
-        this.props.update();   
+        
     }
 
     handleImageChange = e => {
@@ -93,7 +93,7 @@ class Form extends Component {
                     onChange={this.handleChange}
                     value={this.state.affiliation} >
                     <option value="Selecione">Selecione</option>
-                    <option value="Indígena">Indígena</option>
+                    <option value="Indigena">Indígena</option>
                     <option value="Africano">Africano</option>
                     <option value="Europeia">Europeia</option>
                     <option value="Neutro">Neutro</option>

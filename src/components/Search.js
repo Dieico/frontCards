@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './css/search.css';
+
 import { Form, Row, Col, Container } from 'react-bootstrap';
 
 
@@ -8,10 +10,11 @@ export default function Search(props) {
 
 
     const handleChange = e => {
+        // console.log(e.target.checked)
         if (e.target.checked) {
-            props.search(e.target.value)
-        } else {
-            props.update()
+            props.search(e.target.value, true)
+        } else if (!e.target.checked) {
+            props.search(e.target.value, false)
         }
     }
 
@@ -21,12 +24,11 @@ export default function Search(props) {
         } else {
             props.update()
         }
-
     }
 
 
     return (
-        <Container >
+        <Container className="Container" >
             <Form.Group s={Row} controlId="search">
                 <Form.Row className="align-items-center">
                     <Col lg="2">
@@ -40,7 +42,7 @@ export default function Search(props) {
                     <Col sm="5">
                         <Form.Check inline label="Africano" onChange={handleChange} type="checkbox" value="Africano" id="Africano" />
                         <Form.Check inline label="Europeu" onChange={handleChange} type="checkbox" value="Europeu" id="Europeu" />
-                        <Form.Check inline label="Indígena" onChange={handleChange} type="checkbox" value="Indígena" id="Indígena" />
+                        <Form.Check inline label="Indigena" onChange={handleChange} type="checkbox" value="Indigena" id="Indigena" />
                         <Form.Check inline label="Neutro" onChange={handleChange} type="checkbox" value="Neutro" id="Neutro" />
                     </Col>
                 </Form.Row>

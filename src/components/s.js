@@ -95,7 +95,7 @@ function Example(props) {
                                                 defaultValue={props.card.affiliation}
                                                 sm="5">
                                                 <option>Africano</option>
-                                                <option>Indígena</option>
+                                                <option>Indigena</option>
                                                 <option>Europeu</option>
                                                 <option>Neutro</option>
                                             </Form.Control>

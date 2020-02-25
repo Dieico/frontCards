@@ -37,7 +37,7 @@ function Example(props) {
         }
 
         await api.put(`update/${form.id.value}`, data);
-        props.update();
+        // props.update();
     };
 
     const handleImageChange = e => {
@@ -61,7 +61,7 @@ function Example(props) {
                 Editar
             </Button>
 
-            <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show={show} onHide={handleClose}>
+            <Modal size="xl" aria-labelledby="contained-modal-title-vcenter" centered show={show} onHide={handleClose}>
 
                 <Modal.Header closeButton>
                     <Modal.Title>Editor de Carta</Modal.Title>
@@ -82,16 +82,16 @@ function Example(props) {
                                     <Form.Control type="hidden" id="id" defaultValue={props.card._id} />
                                     <Form.Control id="image" type="hidden" defaultValue={props.card.image} />
 
-                                    <Container>
+                                    <Container className="d-flex justify-content-center" >
                                         <Image id="imageshow"
                                             src={`https://lh3.google.com/u/0/d/${props.card.image}?${new Date().getTime()}`}
                                             alt="Card"
-                                            fluid  />
+                                            thumbnail />
                                     </Container>
 
-                                    
-                                        <Form.Control id="imagem" type="file" onChange={handleImageChange} />
-                                    
+
+                                    <Form.Control id="imagem" type="file" onChange={handleImageChange} />
+
 
                                     <Form.Row >
                                         <Form.Group as={Col} controlId="at1">
@@ -110,16 +110,7 @@ function Example(props) {
                                         </Form.Group>
                                     </Form.Row>
 
-                                    <ToggleButtonGroup
-                                        type="radio"
-                                        defaultValue={props.card.affiliation}
-                                        name="options"
-                                        onChange={handleChangeRadio}>
-                                        <ToggleButton variant="light" value={"Africano"}>Africano</ToggleButton>
-                                        <ToggleButton variant="light" value={"Indígena"}>Indígena</ToggleButton>
-                                        <ToggleButton variant="light" value={"Europeu"}>Europeu</ToggleButton>
-                                        <ToggleButton variant="light" value={"Neutro"}>Neutro</ToggleButton>
-                                    </ToggleButtonGroup>
+
 
                                     <Form.Group controlId="spell">
                                         <Form.Label>
@@ -137,15 +128,25 @@ function Example(props) {
 
 
                                 <Col>
+                                    <ToggleButtonGroup className="d-flex justify-content-center"
+                                        type="radio"
+                                        defaultValue={props.card.affiliation}
+                                        name="options"
+                                        onChange={handleChangeRadio}>
+                                        <ToggleButton variant="light" value={"Africano"}>Africano</ToggleButton>
+                                        <ToggleButton variant="light" value={"Indigena"}>Indigena</ToggleButton>
+                                        <ToggleButton variant="light" value={"Europeu"}>Europeu</ToggleButton>
+                                        <ToggleButton variant="light" value={"Neutro"}>Neutro</ToggleButton>
+                                    </ToggleButtonGroup>
 
                                     <Form.Group controlId="description">
                                         <Form.Label column sm="5">
                                             Descrição:
                                             </Form.Label>
                                         <hr />
-                                        <Form.Control
+                                        <Form.Control className="col d-flex flex-column"
                                             as="textarea"
-                                            rows="20"
+                                            rows="h-100"
                                             plaintext
                                             defaultValue={props.card.description} />
 
